@@ -37,7 +37,7 @@ eg: http://deanrather.github.io/pics.html#6|https://plus.google.com/photos/11442
                 urls                = $(location).attr('hash').split('|')[1].split(',');
             }
             
-            if (! interval_seconds === parseInt(interval_seconds) || interval_seconds < 3 )
+            if ( interval_seconds < 3 )
             {
                 interval_seconds = 600;
             }
