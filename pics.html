@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>pics</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script>
+
+			$(document).ready(function(){
+			  var user_id = "114422221272941024201";
+			  var album_id = "6067290589046854321";
+				var api_url = "https://picasaweb.google.com/data/feed/api/user/"+user_id+"/albumid/"+album_id+"?alt=json"
+
+				$.ajax({
+					type: 'GET',
+					url: api_url,
+					dataType: 'json',
+					async: false,
+					success: function(data) {
+						var id = Math.floor((Math.random() * data.feed.entry.length));
+						var img_url = data.feed.entry[id].content.src;
+						$('body').html('<img src="' + img_url + '" width="100%">');
+					}
+				});
+			});
+		</script>
+		<style>
+		body {margin: 0; padding: 0;}
+	</head>
+	<body>
+	</body>
+</html>
