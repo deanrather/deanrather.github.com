@@ -9,9 +9,9 @@ Usage:
 - Get the URLs to your selected Albums (Make sure they're public!)
 - Put the Interval between slides (in seconds) and the URLs into the URI like this:
 
-    http://deanrather.github.io/pics.html/#INTERVAL_SECONDS|ALBUM_URL,ALBUM_URL...
+    http://deanrather.github.io/pics.html#INTERVAL_SECONDS|ALBUM_URL,ALBUM_URL...
 
-eg: http://deanrather.github.io/pics.html/#600|https://plus.google.com/photos/114422221272941024201/albums/6067290589046854321,https://plus.google.com/photos/114422221272941024201/albums/6067559740819782033
+eg: http://deanrather.github.io/pics.html#6|https://plus.google.com/photos/114422221272941024201/albums/6067290589046854321,https://plus.google.com/photos/114422221272941024201/albums/6067559740819782033
 
 -->
 <head>
@@ -33,7 +33,7 @@ eg: http://deanrather.github.io/pics.html/#600|https://plus.google.com/photos/11
 
             if (! interval_seconds === parseInt(interval_seconds) )
             {
-                interval_seconds = 10;
+                interval_seconds = 600;
             }
 
             if (! urls )
