@@ -9,9 +9,9 @@ Usage:
 - Get the URLs to your selected Albums (Make sure they're public!)
 - Put the Interval between slides (in seconds) and the URLs into the URI like this:
 
-    http://deanrather.github.io/pics.html/google-slideshow/#INTERVAL_SECONDS|ALBUM_URL,ALBUM_URL...
+    http://deanrather.github.io/pics.html/#INTERVAL_SECONDS|ALBUM_URL,ALBUM_URL...
 
-eg: http://deanrather.github.io/pics.html/google-slideshow/#600|https://plus.google.com/photos/114422221272941024201/albums/6067290589046854321,https://plus.google.com/photos/114422221272941024201/albums/6067559740819782033
+eg: http://deanrather.github.io/pics.html/#600|https://plus.google.com/photos/114422221272941024201/albums/6067290589046854321,https://plus.google.com/photos/114422221272941024201/albums/6067559740819782033
 
 -->
 <head>
@@ -103,6 +103,13 @@ eg: http://deanrather.github.io/pics.html/google-slideshow/#600|https://plus.goo
             $('.visible').attr('src', $('.preload').attr('src') );
 
             // Get the next image from the list
+            while(images[nextImageIndex]['gphoto$width']['$t'] < images[nextImageIndex]['gphoto$height']['$t'])
+            {
+                console.log('Skipping: ', images[nextImageIndex]);
+                nextImageIndex++;
+            }
+
+            var img_height = images[nextImageIndex]['gphoto$height']['$t'];
             var img_url = images[nextImageIndex].content.src;
             nextImageIndex++;
 
