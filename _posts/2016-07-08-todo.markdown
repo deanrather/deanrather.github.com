@@ -1,0 +1,8 @@
+---
+published: true
+title: TODO
+layout: post
+---
+Migrate all mah GISTS to this.
+Fix up front-page to look nice.
+Make this a blog.deanrather.com subdomain maybe..
